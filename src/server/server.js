@@ -6,18 +6,35 @@ app.use(cors());
 
 const port = 7832;
 
-const albums = [
-  {artist: 'Anberlin', title: 'Dark Is The Way, Light Is A Place', year: '2010'},
-  {artist: 'Anberlin', title: 'Vital', year: '2012'},
-  {artist: 'Bad Religion', title: 'Christmas Songs', year: '2013'},
-  {artist: 'Band of Horses', title: 'Everything All The Time', year: '2006'},
-  {artist: 'Bring Me The Horizon', title: 'Sempiternal', year: '2013'},
-  {artist: 'Coldplay', title: 'A Rush Of Blood To The Head', year: '2002'},
-  {artist: 'Coldplay', title: 'Mylo Xyloto', year: '2011'},
-  {artist: 'Coldplay', title: 'Viva la Vida or Death and All His Friends', year: '2008'},
-  {artist: 'Coldplay', title: 'X&Y', year: '2005'}
-];
+const response = {
+  "registrationNumber": "AA11111",
+  "vin": "LOLOLOLOLOLOLOLOL",
+  "car": {
+    "brand": "BLAH",
+    "model": "BLEH",
+    "modelText": "LOL",
+    "modelYear": 2000,
+    "vehicleGroup": "Kanin",
+    "usedImport": false,
+  },
+  "customer": {
+    "firstname": "FIRSTNAME",
+    "lastname": "LASTNAME",
+    "address": "LOL STREET 21",
+    "postalCode": "IDK",
+    "city": "",
+    "hasInternationalAddress": false,
+    "internationalAddress": null,
+    "internationalPostAddress": null,
+    "country": null,
+    "phoneNumberPrivate": "55555555",
+    "phoneNumberMobile": "55555555",
+    "email": null
+  }
+};
 
-app.get('/albums', (req, res) => res.send(albums));
+app.get('/the-resource', (req, res) => res.send(response));
+
+app.put('/the-resource', (req, res) => res.send({message: 'okay!'}));
 
 app.listen(port, () => console.log('Listening on port', port));
